@@ -49,10 +49,4 @@ RSpec.describe AccountNumber do
 
     AccountNumber.readlines("test.txt").each_with_index { |n, i| expect(n).to eq(numbers[i]) }
   end
-
-  it "signals an error when parsing a malformed file" do
-    # turn on debug to see ouput messages for unreadable digits
-    # AccountNumber.debug = true
-    expect{AccountNumber.readlines("with_error.txt")}.to raise_error(ArgumentError, "wrong record 6, size: 27")
-  end
 end
